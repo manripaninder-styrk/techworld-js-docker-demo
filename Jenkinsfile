@@ -9,35 +9,22 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                script {
-                   gv = load "script.groovy" 
-                }
+                echo 'initilizing the jenkins pipeline'
             }
         }
         stage("build") {
             steps {
-                script {
-                    gv.buildApp()
-                }
+                echo 'building the application'
             }
         }
         stage("test") {
-            when {
-                expression {
-                    params.executeTests
-                }
-            }
             steps {
-                script {
-                    gv.testApp()
-                }
+                echo 'testing the application'
             }
         }
         stage("deploy") {
             steps {
-                script {
-                    gv.deployApp()
-                }
+                    echo 'deploying the application'
             }
         }
     }   
