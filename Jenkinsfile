@@ -10,6 +10,7 @@ pipeline {
         stage("init") {
             steps {
                 echo 'initilizing the jenkins pipeline'
+                echo 'after setting polling in Jenkins'
             }
         }
         stage("build") {
